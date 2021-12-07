@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Every variables are declare here*/
+:root{
+    /* Global VARS */
+    --main-color: red;
+    --radius: 10px;
+
+    /* Button VARS */
+    --button-font-size: larger;
+    --button-font-color: white;
+    --button-padding: 5px;
+    --button-bg-color: navy;
+
+    /* Input VARS */
+}
+
+/*For the button*/
+button{
+    font-size: var(--button-font-size);
+    color: var(--button-font-color);
+    padding: var(--button-padding);
+    background-color: var(--button-bg-color);
+    border-radius: var(--radius);
+}
