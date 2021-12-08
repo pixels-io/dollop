@@ -1,0 +1,107 @@
+/*Simon Gingras - GUM stylesheet Demo V0.1*/
+
+$theme-colors: (
+        "main": #ff7832,
+        "primary" : #325afe,
+        "secondary" : #14beb9,
+        "success": #00b477,
+        "danger": #f93245,
+        "warning": #feaa00,
+        "info": #7846b4,
+        "light": #ffffff ,
+        "dark": #1e1e1e,
+        "muted": #EDECF1,
+        "clean": #ff3d78
+);
+
+
+///////////////////
+/*The basic button*/
+//////////////////
+.btn{
+  display: inline-block;
+
+  padding: .375rem .75rem;
+
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  color: #212529;
+  background-color: transparent;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@each $name,$color in $theme-colors {
+  .btn-#{$name}{
+    background-color: $color;
+    color: white;
+  }
+}
+
+///////////////////
+/*The grid system*/
+//////////////////
+$no-of-columns: 12;
+$extra-small-screen-width-breakpoint: 350px;
+$breakpoints: (
+        "sm": 576px,
+        "md": 768px,
+        "lg": 992px,
+        "xl": 1200px
+);
+
+.container{
+  display: block;
+  width: 100%;
+  max-width: 1170px;
+
+  padding: 0px 1rem;
+  margin: 0px auto;
+
+  &-fluid{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 1rem 0px;
+  }
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/*Loop trough the number of column for the grid system*/
+@each $breakpoint,$value in $breakpoints {
+  // MEDIA QUERY
+  @media only screen and (min-width: $value) {
+    // RESPONSIVE COLUMN CODE .....
+    @for $i from 1 through $no-of-columns {
+      .col-#{$breakpoint}-#{$i} {
+        width: (100% /  ( $no-of-columns / $i))  ;
+        padding: 0px 1rem;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $extra-small-screen-width-breakpoint) {
+  // RESPONSIVE COLUMN CODE .....
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      width: (100% /  ( $no-of-columns / $i))  ;
+      padding: 0px 1rem;
+    }
+  }
+}

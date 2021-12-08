@@ -15,15 +15,23 @@
     --button-font-color: white;
     --button-padding: 5px;
     --button-bg-color: navy;
+    /*Button color*/
+    --primary: #325afe;
+    --secondary: #14beb9;
+    --success: #00b477;
+    --warning: #feaa00;
+    --danger: #f93245;
+    --info: #7846b4;
+    --clean: #ff3d78;
 
     /* Input VARS */
 }
 
 /*For the button*/
-button{
+/*button{
     font-size: var(--button-font-size);
     color: var(--button-font-color);
     padding: var(--button-padding);
     background-color: var(--button-bg-color);
     border-radius: var(--radius);
-}
+}*/
